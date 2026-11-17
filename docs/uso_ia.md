@@ -35,7 +35,7 @@ A validação crítica identificou e corrigiu imprecisões nas versões prelimin
 
 1. **Atualização terminológica do INSS:** a redação inicial usava "auxílio-doença"; o texto final adotou a denominação oficial atual, **"auxílio por incapacidade temporária"**, mantendo a expressão antiga apenas como palavra-chave para que os cidadãos continuem encontrando a orientação;
 2. **Gratuidade da CIN:** confirmada a redação do art. 2º da Lei Federal nº 14.534/2023, que assegura a gratuidade da primeira via da Carteira de Identidade Nacional em todo o território nacional;
-3. **Número oficial da Defesa Civil por SMS:** conferido o número correto **40199** e a gratuitade do serviço junto à Secretaria Nacional de Proteção e Defesa Civil;
+3. **Número oficial da Defesa Civil por SMS:** conferido o número correto **40199** e a gratuidade do serviço junto à Secretaria Nacional de Proteção e Defesa Civil;
 4. **Detecção de falso positivo no algoritmo de busca:** a pergunta *"Receita de bolo de chocolate..."* chegava inicialmente ao registro do CPF (DOC-02) por conter a palavra "receita"; a equipe ajustou o algoritmo implementando a checagem de **cobertura da consulta** (percentual de termos da pergunta encontrados no registro), eliminando o falso positivo sem degradar nenhuma pergunta legítima;
 5. **Detecção de ambiguidade:** o termo genérico *"social"* passava direto para a Tarifa Social (SRV-05); após calibração do limiar de ambiguidade e do bônus de frase exata, passou a ser corretamente classificado como AMBÍGUO, listando os três registros candidatos para escolha do usuário.
 
