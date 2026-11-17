@@ -126,7 +126,7 @@ Os indicadores confirmam que a combinação de **índice invertido ponderado, ga
 
 ```bash
 # 1. Clonar o repositório
-git clone https://github.com/raiSilvaL/globalSolution2
+git clone [https://github.com/raiSilvaL/globalSolution2](https://github.com/raiSilvaL/globalsolution2)
 cd citizen-assist-ai
 
 # 2. Executar o assistente interativo (Modelo A por padrão)
