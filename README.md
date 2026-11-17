@@ -309,9 +309,7 @@ A interface implementa, em JavaScript puro, o **mesmo motor de busca do backend*
 ```
 citizen-assist-ai/
 ├── README.md                      # Documentação principal (este arquivo)
-├── requirements.txt               # Declaração de compatibilidade (stdlib)
 ├── .gitignore
-├── entrega_links.txt              # Arquivo .TXT para envio no FIAP ON (2 links)
 ├── src/
 │   ├── sistema.py                 # Ponto de entrada interativo (CLI) e flag --test
 │   ├── servidor_web.py            # Servidor HTTP local integrado
