@@ -1,0 +1,118 @@
+{
+  "descricao": "Bateria de testes do Citizen Assist AI — avalia taxa de acerto das respostas, tempo de consulta e tratamento de limitações.",
+  "data": "2026-11-09",
+  "cenarios": [
+    {
+      "id": "T01",
+      "categoria": "direta",
+      "pergunta": "Como tirar a Nova Carteira de Identidade Nacional (CIN)?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "DOC-01"},
+      "explicacao": "Pergunta canônica com termos da CIN; deve recuperar DOC-01."
+    },
+    {
+      "id": "T02",
+      "categoria": "direta",
+      "pergunta": "Meu CPF está com problemas, como regularizar na Receita Federal?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "DOC-02"},
+      "explicacao": "Combinação 'CPF + regularizar + Receita Federal'; deve apontar para DOC-02."
+    },
+    {
+      "id": "T03",
+      "categoria": "direta",
+      "pergunta": "Como solicitar o seguro-desemprego e qual é o prazo?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "SRV-04"},
+      "explicacao": "Consulta direta sobre seguro-desemprego; deve retornar SRV-04."
+    },
+    {
+      "id": "T04",
+      "categoria": "direta",
+      "pergunta": "Não tenho dinheiro para pagar advogado, como conseguir a Defensoria Pública?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "DIR-03"},
+      "explicacao": "Menção explícita à Defensoria Pública e assistência jurídica; deve retornar DIR-03."
+    },
+    {
+      "id": "T05",
+      "categoria": "direta",
+      "pergunta": "Como cadastrar para receber alertas de chuva forte da Defesa Civil por SMS 40199?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "COM-02"},
+      "explicacao": "Menção a 'Defesa Civil', 'chuva forte' e '40199'; deve apontar para COM-02."
+    },
+    {
+      "id": "T06",
+      "categoria": "direta",
+      "pergunta": "Quais telefones posso ligar para denunciar violência contra a mulher ou violação de direitos humanos?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "COM-04"},
+      "explicacao": "Menção a Disque 100 / Ligue 180 e direitos humanos; deve apontar para COM-04."
+    },
+    {
+      "id": "T07",
+      "categoria": "reformulacao",
+      "pergunta": "Quero saber como faço um RG novo no meu estado",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "DOC-01"},
+      "explicacao": "Reformulação coloquial usando 'RG novo'; deve mapear para DOC-01 (CIN)."
+    },
+    {
+      "id": "T08",
+      "categoria": "reformulacao",
+      "pergunta": "Perdi minha certidão de casamento e nascimento, onde tiro outra via?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "DOC-05"},
+      "explicacao": "Reformulação com 'certidão de casamento', 'nascimento' e 'segunda via'; deve mapear para DOC-05."
+    },
+    {
+      "id": "T09",
+      "categoria": "reformulacao",
+      "pergunta": "Como funciona o desconto da conta de luz para famílias de baixa renda?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "SRV-05"},
+      "explicacao": "Reformulação coloquial para Tarifa Social de Energia; deve mapear para SRV-05."
+    },
+    {
+      "id": "T10",
+      "categoria": "reformulacao",
+      "pergunta": "Comprei um celular com defeito e a loja não quer trocar, quais são meus direitos?",
+      "esperado": {"status": "SUCESSO", "id_orientacao": "DIR-01"},
+      "explicacao": "Cenário de consumo em linguagem natural; deve acionar DIR-01 (Procon)."
+    },
+    {
+      "id": "T11",
+      "categoria": "fora_escopo",
+      "pergunta": "Como tirar o visto de turista para os Estados Unidos?",
+      "esperado": {"status": "SEM_CORRESPONDENCIA", "id_orientacao": null},
+      "explicacao": "Tema internacional fora do escopo cidadão brasileiro; o assistente deve declarar limite sem inventar."
+    },
+    {
+      "id": "T12",
+      "categoria": "fora_escopo",
+      "pergunta": "Qual é a melhor corretora para investir em ações na bolsa?",
+      "esperado": {"status": "SEM_CORRESPONDENCIA", "id_orientacao": null},
+      "explicacao": "Tema financeiro privado fora do escopo; deve acionar aviso de limitação."
+    },
+    {
+      "id": "T13",
+      "categoria": "fora_escopo",
+      "pergunta": "Receita de bolo de chocolate fofinho com cobertura",
+      "esperado": {"status": "SEM_CORRESPONDENCIA", "id_orientacao": null},
+      "explicacao": "Consulta totalmente desconectada do serviço público; deve ser rejeitada educadamente."
+    },
+    {
+      "id": "T14",
+      "categoria": "limitacao",
+      "pergunta": "",
+      "esperado": {"status": "ENTRADA_VAZIA", "id_orientacao": null},
+      "explicacao": "Entrada vazia; o sistema deve validar e orientar como formular a pergunta."
+    },
+    {
+      "id": "T15",
+      "categoria": "limitacao",
+      "pergunta": "social",
+      "esperado": {"status": "AMBIGUO", "id_orientacao": null},
+      "explicacao": "Termo hiper-genérico ('social') com correspondência em múltiplos registros temáticos; deve listar candidatos para desambiguação."
+    },
+    {
+      "id": "T16",
+      "categoria": "limitacao",
+      "pergunta": "serviço fictício de teletransporte municipal xpto",
+      "esperado": {"status": "SEM_CORRESPONDENCIA", "id_orientacao": null},
+      "explicacao": "Pergunta deliberadamente fantasiosa; deve acionar aviso de ausência de informação confiável."
+    }
+  ]
+}

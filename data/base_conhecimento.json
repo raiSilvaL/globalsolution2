@@ -1,0 +1,453 @@
+{
+  "versao_base": "1.0.0",
+  "data_geracao": "2026-11-09",
+  "descricao": "Base de conhecimento verificada do Citizen Assist AI contendo orientações sobre documentação básica, serviços públicos e benefícios sociais, direitos e cidadania, e orientações comunitárias e emergências.",
+  "temas": [
+    {
+      "id": "T1",
+      "nome": "Documentação Básica",
+      "descricao": "Identidade Nacional (CIN), CPF, Título de Eleitor, Carteira de Trabalho e certidões civis.",
+      "subtemas": ["Identificação Civil", "Identificação Fiscal", "Cidadania Eleitoral", "Documentos Trabalhistas", "Registro Civil"]
+    },
+    {
+      "id": "T2",
+      "nome": "Serviços Públicos e Benefícios Sociais",
+      "descricao": "Cadastro Único, Bolsa Família, Meu INSS, Seguro-Desemprego e Tarifa Social de Energia.",
+      "subtemas": ["Assistência Social", "Transferência de Renda", "Previdência Social", "Proteção ao Trabalhador", "Utilidades Públicas"]
+    },
+    {
+      "id": "T3",
+      "nome": "Direitos e Cidadania",
+      "descricao": "Direitos do consumidor, acesso ao SUS, Defensoria Pública e direitos da pessoa idosa.",
+      "subtemas": ["Relações de Consumo", "Saúde Pública", "Acesso à Justiça", "Proteção Social"]
+    },
+    {
+      "id": "T4",
+      "nome": "Orientações Comunitárias e Emergências",
+      "descricao": "CRAS municipal, Defesa Civil, vacinação e canais oficiais de denúncia e acolhimento.",
+      "subtemas": ["Apoio Comunitário", "Proteção Comunitária e Desastres", "Saúde Comunitária", "Direitos Humanos e Emergências Sociais"]
+    }
+  ],
+  "orientacoes": [
+    {
+      "identificador": "DOC-01",
+      "tema": "Documentação Básica",
+      "subtema": "Identificação Civil",
+      "titulo": "Nova Carteira de Identidade Nacional (CIN)",
+      "pergunta_modelo": "Como tirar a Nova Carteira de Identidade Nacional (CIN)?",
+      "palavras_chave": [
+        "cin", "carteira de identidade", "rg novo", "novo rg", "segunda via rg",
+        "primeira via rg", "identidade nacional", "documento de identidade", "tirar rg"
+      ],
+      "orientacao_resumida": "A Carteira de Identidade Nacional (CIN) adota o CPF como número único de identificação e substitui o modelo antigo de RG. Para emiti-la, procure o órgão estadual de identificação civil com Certidão de Nascimento ou Casamento e CPF regularizado. A primeira via é gratuita em todo o país.",
+      "orientacao_detalhada": "A CIN foi instituída pela Lei nº 14.534/2023 para unificar a identificação civil no Brasil sob o número do CPF, eliminando números de RG diferentes por estado. O documento traz código MRZ internacional e versão digital acessível pelo aplicativo gov.br após a emissão presencial.",
+      "passos": [
+        "Verifique se o seu CPF está regular junto à Receita Federal.",
+        "Separe Certidão de Nascimento (solteiros) ou Casamento (casados/viúvos) original e legível.",
+        "Agende o atendimento no órgão do seu estado (ex.: Poupatempo em SP, Detran no RJ, UAI em MG).",
+        "Compareça na data com os documentos para coleta de foto e biometria.",
+        "Retire o documento impresso no prazo indicado ou acesse a versão digital no app gov.br."
+      ],
+      "aviso": "Confirme taxas de 2ª via e regras de agendamento diretamente com o órgão do seu estado, pois procedimentos variam por unidade federativa.",
+      "referencia_consultada": "Ministério da Gestão e da Inovação em Serviços Públicos (MGI) — gov.br/identidade; Lei Federal nº 14.534/2023.",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DOC-02", "DOC-05", "DOC-03"]
+    },
+    {
+      "identificador": "DOC-02",
+      "tema": "Documentação Básica",
+      "subtema": "Identificação Fiscal",
+      "titulo": "CPF — Inscrição, Regularização e Comprovante",
+      "pergunta_modelo": "Como faço para regularizar ou tirar o CPF?",
+      "palavras_chave": [
+        "cpf", "regularizar cpf", "tirar cpf", "cpf suspenso", "cpf pendente",
+        "inscrição cpf", "comprovante cpf", "receita federal", "segunda via cpf"
+      ],
+      "orientacao_resumida": "A inscrição e a regularização do CPF podem ser feitas gratuitamente pela internet no portal da Receita Federal. O CPF é o número único oficial do cidadão perante os serviços públicos. Atendimento presencial também existe nos Correios, Banco do Brasil ou Caixa, mediante pequena tarifa pública.",
+      "orientacao_detalhada": "O CPF pode estar em situação regular, suspensa (dados cadastrais desatualizados), pendente de regularização (declarações pendentes) ou cancelada. Regularizar pela internet é gratuito e imediato na maioria dos casos simples.",
+      "passos": [
+        "Acesse o site da Receita Federal (gov.br/receitafederal) na área 'Meu CPF'.",
+        "Selecione 'Inscrever-se no CPF' ou 'Atualizar Cadastro'.",
+        "Preencha os dados e anexe cópia do documento de identificação quando solicitado.",
+        "Acompanhe o protocolo online até a confirmação da situação regular."
+      ],
+      "aviso": "Desconfie de sites ou mensagens que cobrem valores altos para regularização; o canal oficial da Receita é sempre gratuito pela internet.",
+      "referencia_consultada": "Receita Federal do Brasil — gov.br/receitafederal (Serviços Meu CPF).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DOC-01", "SRV-01", "DIR-03"]
+    },
+    {
+      "identificador": "DOC-03",
+      "tema": "Documentação Básica",
+      "subtema": "Cidadania Eleitoral",
+      "titulo": "Título de Eleitor e e-Título",
+      "pergunta_modelo": "Como obter a primeira via ou regularizar o Título de Eleitor?",
+      "palavras_chave": [
+        "título de eleitor", "titulo de eleitor", "e-titulo", "etitulo", "transferir titulo",
+        "justificar voto", "regularizar titulo", "alistamento eleitoral", "votar", "zona eleitoral"
+      ],
+      "orientacao_resumida": "O alistamento eleitoral, a transferência de município e a regularização cadastral são feitos pelo sistema Título Net no portal do TSE. O documento em versão digital está disponível gratuitamente pelo aplicativo e-Título, que também informa o local de votação e permite justificar a ausência às urnas.",
+      "orientacao_detalhada": "O alistamento eleitoral é obrigatório para brasileiros maiores de 18 anos e facultativo entre 16 e 18 anos e para analfabetos. Multas eleitorais podem ser quitadas pelo próprio portal do TSE por Pix ou boleto.",
+      "passos": [
+        "Acesse o portal tse.jus.br e escolha 'Autoatendimento do Eleitor / Título Net'.",
+        "Preencha os dados e envie fotos dos documentos solicitados e de uma selfie segurando o documento.",
+        "Acompanhe o protocolo pelo mesmo sistema.",
+        "Baixe o aplicativo e-Título e informe o número do documento para ter o título digital com foto."
+      ],
+      "aviso": "O cadastro eleitoral fecha temporariamente nos meses anteriores às eleições conforme o calendário divulgado pelo TSE.",
+      "referencia_consultada": "Tribunal Superior Eleitoral (TSE) — tse.jus.br (Autoatendimento do Eleitor e Título Net).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DOC-01", "DOC-02", "DIR-04"]
+    },
+    {
+      "identificador": "DOC-04",
+      "tema": "Documentação Básica",
+      "subtema": "Documentos Trabalhistas",
+      "titulo": "Carteira de Trabalho Digital (CTPS Digital)",
+      "pergunta_modelo": "Como funciona a Carteira de Trabalho Digital e onde emiti-la?",
+      "palavras_chave": [
+        "carteira de trabalho", "ctps digital", "carteira de trabalho digital", "registro profissional",
+        "contratação", "admissão", "assinar carteira", "ministério do trabalho"
+      ],
+      "orientacao_resumida": "A CTPS Digital substitui o modelo impresso para a imensa maioria dos trabalhadores formais. Ela é gerada automaticamente a partir do CPF do cidadão e pode ser consultada pelo aplicativo 'Carteira de Trabalho Digital' ou pelo portal gov.br, sem custo.",
+      "orientacao_detalhada": "Para ser contratado, o trabalhador apenas precisa informar o número do CPF ao empregador, que lança as informações via eSocial. Os contratos, salários e vínculos aparecem no aplicativo em poucos dias úteis.",
+      "passos": [
+        "Instale o aplicativo 'Carteira de Trabalho Digital' ou acesse gov.br com sua conta.",
+        "Faça login com CPF e senha do gov.br (nível prata ou ouro recomendado para ver todos os detalhes).",
+        "Consulte contratos ativos, anotações de férias e histórico profissional.",
+        "Use o mesmo ambiente para acompanhar pedidos de seguro-desemprego."
+      ],
+      "aviso": "Caso encontre inconsistências de vínculos empregatícios, procure a empresa contratante ou uma agência de atendimento do trabalho para retificação.",
+      "referencia_consultada": "Ministério do Trabalho e Emprego — gov.br/trabalho-e-emprego (Carteira de Trabalho Digital).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["SRV-04", "SRV-03", "DIR-01"]
+    },
+    {
+      "identificador": "DOC-05",
+      "tema": "Documentação Básica",
+      "subtema": "Registro Civil",
+      "titulo": "Certidões de Nascimento, Casamento e Óbito — 2ª Via",
+      "pergunta_modelo": "Como solicitar a segunda via de uma certidão de nascimento ou casamento?",
+      "palavras_chave": [
+        "certidão de nascimento", "certidão de casamento", "certidao de óbito", "segunda via certidão",
+        "cartório de registro civil", "registrocivil.org.br", "certidão gratuita", "hipossuficiência"
+      ],
+      "orientacao_resumida": "A segunda via de certidões civis pode ser pedida diretamente no cartório onde o registro foi feito ou pelo portal eletrônico registrocivil.org.br, com opção de entrega física ou formato digital. A primeira via é sempre gratuita, e a 2ª via é gratuita para quem declarar não ter condições de pagar.",
+      "orientacao_detalhada": "A Lei Federal nº 9.534/1997 assegura a gratuidade da primeira certidão de nascimento e de óbito para qualquer pessoa e da segunda via para quem declarar hipossuficiência financeira, mediante modelo de declaração fornecido pelo próprio cartório.",
+      "passos": [
+        "Identifique o cartório, livro, folha e termo onde consta o registro (se souber).",
+        "Solicite presencialmente no cartório ou pelo portal registrocivil.org.br.",
+        "Caso não possa pagar, preencha a declaração de hipossuficiência informada pelo cartório.",
+        "Escolha receber a certidão digital por e-mail ou a versão em papel pelo correio."
+      ],
+      "aviso": "Os emolumentos cobrados pelos cartórios são tabelados por lei em cada estado; confirme a tabela vigente no site do tribunal de justiça local.",
+      "referencia_consultada": "Conselho Nacional de Justiça (CNJ) e Lei Federal nº 9.534/1997 — cnj.jus.br; portal registrocivil.org.br.",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DOC-01", "DIR-03", "COM-01"]
+    },
+    {
+      "identificador": "SRV-01",
+      "tema": "Serviços Públicos e Benefícios Sociais",
+      "subtema": "Assistência Social",
+      "titulo": "Cadastro Único (CadÚnico) para Programas Sociais",
+      "pergunta_modelo": "O que é o Cadastro Único e como se cadastrar?",
+      "palavras_chave": [
+        "cadunico", "cadastro único", "cadastro unico", "inscrever no cadunico", "atualizar cadunico",
+        "cras cadastro", "programas sociais", "benefício social", "família de baixa renda"
+      ],
+      "orientacao_resumida": "O Cadastro Único reúne informações socioeconômicas das famílias de baixa renda e é pré-requisito para Bolsa Família, BPC, Tarifa Social e dezenas de outros programas. A inscrição é presencial no CRAS do município, e a família deve atualizar os dados a cada dois anos ou sempre que houver mudança.",
+      "orientacao_detalhada": "Podem se cadastrar famílias com renda mensal de até meio salário mínimo por pessoa ou renda total de até três salários mínimos. É necessário que o responsável familiar, preferencialmente mulher, leve os documentos de todos os moradores do domicílio.",
+      "passos": [
+        "Procure o CRAS ou posto do CadÚnico mais próximo da sua residência.",
+        "Leve CPF ou Título de Eleitor do responsável e pelo menos um documento de cada membro da família.",
+        "Apresente comprovante de endereço recente (conta de luz ou água).",
+        "Responda à entrevista social de maneira completa e verídica.",
+        "Guarde o comprovante de cadastramento com o NIS (Número de Identificação Social)."
+      ],
+      "aviso": "Manter os dados desatualizados por mais de dois anos pode levar ao bloqueio de benefícios sociais já concedidos.",
+      "referencia_consultada": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome (MDS) — gov.br/mds (Cadastro Único).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["SRV-02", "SRV-05", "COM-01"]
+    },
+    {
+      "identificador": "SRV-02",
+      "tema": "Serviços Públicos e Benefícios Sociais",
+      "subtema": "Transferência de Renda",
+      "titulo": "Programa Bolsa Família",
+      "pergunta_modelo": "Quais são os critérios para receber o Bolsa Família?",
+      "palavras_chave": [
+        "bolsa família", "bolsa familia", "valor bolsa família", "criterios bolsa família",
+        "calendário bolsa família", "condicionalidades", "crianças na escola vacina", "pagamento auxilio"
+      ],
+      "orientacao_resumida": "O Bolsa Família transfere renda a famílias em situação de vulnerabilidade com renda por pessoa de até o limite fixado pelo programa, inscritas no CadÚnico com dados atualizados. O benefício exige acompanhamento de saúde (vacinas e pré-natal) e frequência escolar mínima de crianças e adolescentes.",
+      "orientacao_detalhada": "A concessão é automática mensalmente com base nos dados do CadÚnico e na disponibilidade orçamentária; não existe fila pública para compra de vagas. O pagamento é realizado pela Caixa e movimentado pelo app Caixa Tem, com saque em lotéricas e agências.",
+      "passos": [
+        "Garanta que a família está inscrita no CadÚnico e com dados em dia.",
+        "Acompanhe a concessão pelo app Caixa Tem, app Bolsa Família ou telefone 111 da Caixa.",
+        "Cumpridas as condicionalidades, mantenha crianças matriculadas e vacinação em dia.",
+        "Atualize o cadastro no CRAS sempre que mudarem renda, escola ou endereço."
+      ],
+      "aviso": "A inscrição no CadÚnico não garante inclusão imediata no programa; a seleção é mensal pelo governo federal conforme disponibilidade de recursos.",
+      "referencia_consultada": "Caixa Econômica Federal e MDS — caixa.gov.br/beneficios/bolsa-familia; gov.br/mds.",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["SRV-01", "SRV-05", "COM-01"]
+    },
+    {
+      "identificador": "SRV-03",
+      "tema": "Serviços Públicos e Benefícios Sociais",
+      "subtema": "Previdência Social",
+      "titulo": "Meu INSS — Serviços e Benefícios Previdenciários",
+      "pergunta_modelo": "Como acessar serviços do INSS pela internet sem ir à agência?",
+      "palavras_chave": [
+        "meu inss", "inss", "aposentadoria", "auxílio por incapacidade", "auxilio doenca",
+        "salário maternidade", "extrato cnis", "telefone 135", "perícia médica", "pedir benefício inss"
+      ],
+      "orientacao_resumida": "A plataforma Meu INSS permite solicitar aposentadorias, auxílio por incapacidade temporária (antigo auxílio-doença), salário-maternidade e pensões, além de emitir extrato CNIS e agendar perícia. O atendimento telefônico oficial e gratuito é o 135, disponível de segunda a sábado.",
+      "orientacao_detalhada": "Quase 100% dos serviços do INSS foram digitalizados. Muitos benefícios são concedidos após análise documental (como Atestmed para perícia com atestado médico), sem necessidade de deslocamento a uma agência da previdência.",
+      "passos": [
+        "Acesse meu.inss.gov.br ou instale o aplicativo Meu INSS.",
+        "Faça login com a conta gov.br.",
+        "Clique em 'Novo Pedido' e selecione o benefício desejado.",
+        "Anexe os documentos e atestados em PDF ou foto nítida e anote o número do protocolo.",
+        "Acompanhe o andamento em 'Consultar Pedidos'."
+      ],
+      "aviso": "Nunca pague terceiros para 'liberar' benefício do INSS; todo o processo pelos canais oficiais é gratuito e fraudes devem ser denunciadas.",
+      "referencia_consultada": "Instituto Nacional do Seguro Social (INSS) — meu.inss.gov.br; gov.br/inss (Central 135).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DOC-04", "SRV-04", "DIR-03"]
+    },
+    {
+      "identificador": "SRV-04",
+      "tema": "Serviços Públicos e Benefícios Sociais",
+      "subtema": "Proteção ao Trabalhador",
+      "titulo": "Seguro-Desemprego",
+      "pergunta_modelo": "Como e quando posso solicitar o seguro-desemprego?",
+      "palavras_chave": [
+        "seguro-desemprego", "seguro desemprego", "demissão sem justa causa", "parcelas",
+        "prazo seguro desemprego", "emprega brasil", "guias de rescisão", "trabalhador demitido"
+      ],
+      "orientacao_resumida": "O seguro-desemprego é devido ao trabalhador formal dispensado sem justa causa e pago em até cinco parcelas conforme o tempo de trabalho. O pedido deve ser feito entre o 7º e o 120º dia após a demissão pelo portal Emprega Brasil, app Carteira de Trabalho Digital ou nas unidades do SINE.",
+      "orientacao_detalhada": "O valor é calculado a partir da média dos três últimos salários informados pelo empregador e não pode ser inferior ao salário mínimo vigente. Não têm direito ao benefício trabalhadores que possuam renda própria suficiente para o sustento da família ou que recebam benefício previdenciário contínuo incompatível.",
+      "passos": [
+        "Aguarde o prazo mínimo de 7 dias após a data da dispensa.",
+        "Abra o app Carteira de Trabalho Digital ou o portal Emprega Brasil (gov.br).",
+        "Informe o número do requerimento entregue pela empresa.",
+        "Confira as informações contratuais e confirme a solicitação.",
+        "Acompanhe a liberação das parcelas diretamente pelo aplicativo."
+      ],
+      "aviso": "Perder o prazo de 120 dias extingue o direito ao seguro-desemprego daquela dispensa; guarde bem os comprovantes rescisórios.",
+      "referencia_consultada": "Ministério do Trabalho e Emprego — gov.br/trabalho-e-emprego (Benefício Seguro-Desemprego).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DOC-04", "SRV-03", "SRV-01"]
+    },
+    {
+      "identificador": "SRV-05",
+      "tema": "Serviços Públicos e Benefícios Sociais",
+      "subtema": "Utilidades Públicas",
+      "titulo": "Tarifa Social de Energia Elétrica",
+      "pergunta_modelo": "Quem tem direito ao desconto da Tarifa Social de Energia Elétrica?",
+      "palavras_chave": [
+        "tarifa social de energia", "tarifa social", "desconto conta de luz", "baixa renda energia",
+        "desconto luz", "aneel", "bpc tarifa social", "conta de energia mais barata"
+      ],
+      "orientacao_resumida": "A Tarifa Social concede descontos progressivos na conta de luz para famílias inscritas no CadÚnico com renda de até meio salário mínimo por pessoa, beneficiários do BPC e famílias com membro dependente de aparelhos médicos. O benefício é aplicado automaticamente pelas distribuidoras por meio do cruzamento com o CadÚnico.",
+      "orientacao_detalhada": "Os descontos podem chegar a até 65% para consumo residencial nos primeiros 30 kWh, diminuindo conforme a faixa de consumo. As distribuidoras de energia devem cadastrar as famílias elegíveis de forma automática desde a Resolução Normativa ANEEL nº 1.000/2021, dispensando burocracia quando o titular da conta coincide com os dados do CadÚnico.",
+      "passos": [
+        "Verifique se sua família está com o CadÚnico ativo e dados idênticos aos da fatura de energia.",
+        "Se o desconto não aparecer, ligue para a distribuidora de energia da sua região informando CPF e NIS.",
+        "Apresente laudo médico comprobatório caso a inclusão seja por uso de aparelhos de sobrevivência.",
+        "Monitore o item 'Tarifa Social' detalhado na conta mensal de luz."
+      ],
+      "aviso": "Descontos deixam de ser aplicados se o cadastro estiver desatualizado há mais de dois anos.",
+      "referencia_consultada": "Agência Nacional de Energia Elétrica (ANEEL) — aneel.gov.br (Tarifa Social de Energia Elétrica).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["SRV-01", "SRV-02", "COM-01"]
+    },
+    {
+      "identificador": "DIR-01",
+      "tema": "Direitos e Cidadania",
+      "subtema": "Relações de Consumo",
+      "titulo": "Direitos do Consumidor e Reclamação no Procon",
+      "pergunta_modelo": "Como registrar uma reclamação contra uma empresa no Procon ou no consumidor.gov.br?",
+      "palavras_chave": [
+        "procon", "consumidor.gov.br", "reclamação", "produto defeito", "garantia",
+        "código de defesa do consumidor", "cancelar compra", "direito de arrependimento", "cdc"
+      ],
+      "orientacao_resumida": "O Código de Defesa do Consumidor garante prazos para reclamar de vícios em produtos (30 dias para bens não duráveis e 90 dias para duráveis), direito de arrependimento em até 7 dias para compras feitas fora da loja e dever de informação clara. Reclamações podem ser abertas na plataforma federal consumidor.gov.br ou no Procon local.",
+      "orientacao_detalhada": "A plataforma consumidor.gov.br permite comunicação direta com centenas de empresas credenciadas que têm até dez dias corridos para responder. Quando o problema não se resolve, o consumidor pode avançar para audiência no Procon estadual ou para o Juizado Especial Cível (pequenas causas), sem necessidade de advogado em causas de menor valor.",
+      "passos": [
+        "Reúna nota fiscal, contratos, números de protocolo de atendimento e comprovantes de pagamento.",
+        "Tente primeiro a solução direta e documente as tentativas de contato com a empresa.",
+        "Abra reclamação no portal consumidor.gov.br com a sua conta gov.br.",
+        "Se a empresa não estiver credenciada ou não responder a contento, procure o Procon da sua cidade/estado.",
+        "Para danos materiais relevantes, consulte o Juizado Especial Cível ou a Defensoria Pública."
+      ],
+      "aviso": "Guarde sempre protocolos e cópias de conversas; eles são fundamentais caso seja necessário abrir processo formal.",
+      "referencia_consultada": "Secretaria Nacional do Consumidor (Senacon) — consumidor.gov.br; Código de Defesa do Consumidor (Lei Federal nº 8.078/1990).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DIR-03", "DIR-04", "SRV-05"]
+    },
+    {
+      "identificador": "DIR-02",
+      "tema": "Direitos e Cidadania",
+      "subtema": "Saúde Pública",
+      "titulo": "Acesso ao SUS e Cartão Nacional de Saúde (CNS)",
+      "pergunta_modelo": "Como ter atendimento no SUS e obter o Cartão Nacional de Saúde?",
+      "palavras_chave": [
+        "sus", "cartão nacional de saúde", "cartao sus", "posto de saúde", "ubs", "upa",
+        "atendimento médico gratuito", "meu sus digital", "consulta pública", "exames sus"
+      ],
+      "orientacao_resumida": "O atendimento no Sistema Único de Saúde é universal e gratuito. Para acessar consultas e exames programados, procure a Unidade Básica de Saúde (UBS) do seu bairro com documento de identificação e comprovante de endereço; lá é emitido o Cartão Nacional de Saúde. A versão digital do cartão está disponível no app Meu SUS Digital.",
+      "orientacao_detalhada": "A rede é organizada em níveis: UBS (atenção primária e preventiva), UPAs e SAMU 192 (urgência e emergência) e hospitais/ambulatoriais de especialidades (encaminhados pela UBS). Nenhum serviço do SUS pode cobrar pelo atendimento.",
+      "passos": [
+        "Localize a UBS que atende o seu endereço pelo portal da secretaria municipal de saúde.",
+        "Compareça com documento de identidade e comprovante de residência para cadastro e emissão do CNS.",
+        "Em caso de urgência, ligue 192 (SAMU) ou procure a UPA mais próxima sem burocracia.",
+        "Acompanhe agendamentos, vacinas e resultados no app Meu SUS Digital."
+      ],
+      "aviso": "Emergências não dependem de cadastro prévio; em risco iminente à vida o atendimento é obrigatório e imediato em qualquer unidade pública.",
+      "referencia_consultada": "Ministério da Saúde — gov.br/saude (Cartão Nacional de Saúde e Meu SUS Digital); Lei Federal nº 8.080/1990.",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["COM-03", "SRV-03", "COM-04"]
+    },
+    {
+      "identificador": "DIR-03",
+      "tema": "Direitos e Cidadania",
+      "subtema": "Acesso à Justiça",
+      "titulo": "Assistência Jurídica Gratuita pela Defensoria Pública",
+      "pergunta_modelo": "Não tenho condições de pagar um advogado. Onde posso conseguir assistência jurídica gratuita?",
+      "palavras_chave": [
+        "defensoria pública", "advogado gratuito", "assistência jurídica", "não tenho dinheiro advogado",
+        "dpu", "defensoria da união", "processo gratuito", "pensão alimentícia gratuita", "divórcio gratuito"
+      ],
+      "orientacao_resumida": "A Defensoria Pública presta assistência jurídica integral e gratuita à população sem recursos para pagar advogado. As Defensorias Estaduais atendem causas cíveis, de família e criminais comuns; a Defensoria Pública da União (DPU) atende matérias federais e previdenciárias. O atendimento é presencial ou online conforme o estado.",
+      "orientacao_detalhada": "O critério é a vulnerabilidade socioeconômica, normalmente aferida por renda familiar mensal máxima fixada por resolução própria em cada estado. Para além da judicialização, os defensores priorizam acordos e mediações extrajudiciais.",
+      "passos": [
+        "Identifique se a causa é estadual (família, cível, crime) ou federal (INSS, Caixa, benefícios da União).",
+        "Consulte o site da Defensoria Pública do seu estado (ex.: defensoria.sp.def.br) ou da DPU (dpu.def.br).",
+        "Separe documento de identidade, comprovante de residência e comprovante de renda de todos os membros.",
+        "Reúna todos os papéis relacionados ao caso (notificações, contratos, decisões) e aguarde o agendamento."
+      ],
+      "aviso": "Algumas causas muito urgentes (prisão, saúde sem remédio, despejo iminente) contam com canais de plantão com atendimento sem agendamento prévio.",
+      "referencia_consultada": "Defensoria Pública da União (DPU) — dpu.def.br; Colégio Nacional de Defensores Públicos-Gerais (Condege) — defensoria pública nos estados.",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DIR-01", "DOC-05", "SRV-03"]
+    },
+    {
+      "identificador": "DIR-04",
+      "tema": "Direitos e Cidadania",
+      "subtema": "Proteção Social",
+      "titulo": "Direitos da Pessoa Idosa e Atendimento Prioritário",
+      "pergunta_modelo": "Quais são os principais direitos garantidos à pessoa idosa no Brasil?",
+      "palavras_chave": [
+        "idoso", "pessoa idosa", "estatuto da pessoa idosa", "atendimento prioritário",
+        "fila preferencial", "transporte gratuito idoso", "bpc idoso", "vaga estacionamento idoso", "80 anos"
+      ],
+      "orientacao_resumida": "O Estatuto da Pessoa Idosa assegura prioridade absoluta em serviços públicos e privados, atendimento preferencial especial aos maiores de 80 anos, gratuidade ou reserva de vagas em transporte público conforme renda, vagas reservadas de estacionamento e acesso ao BPC para idosos a partir de 65 anos em extrema vulnerabilidade. Denúncias podem ser feitas pelo Disque 100.",
+      "orientacao_detalhada": "A Lei Federal nº 10.741/2003 tipifica como crimes o abandono, a negligência e a apropriação indevida de bens de pessoas idosas, com penas aumentadas quando cometidos por familiares ou cuidadores. A credencial de estacionamento deve ser solicitada no órgão de trânsito do município.",
+      "passos": [
+        "Consulte o Estatuto da Pessoa Idosa pelo portal do Ministério dos Direitos Humanos.",
+        "Solicite a credencial de estacionamento reservado no órgão de trânsito local.",
+        "Para vagas de transporte interestadual gratuito, requeira o benefício diretamente nos guichês das empresas até três horas antes da viagem conforme vagas.",
+        "Em caso de violência ou violação, denuncie anonimamente pelo Disque 100 ou procure a Delegacia de Proteção ao Idoso."
+      ],
+      "aviso": "Benefícios tarifários de transporte dependem de renda familiar comprovada e de reserva prévia; confirme as regras junto às empresas operadoras.",
+      "referencia_consultada": "Estatuto da Pessoa Idosa (Lei Federal nº 10.741/2003); Ministério dos Direitos Humanos e da Cidadania — gov.br/mdh.",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["COM-04", "DIR-03", "SRV-01"]
+    },
+    {
+      "identificador": "COM-01",
+      "tema": "Orientações Comunitárias e Emergências",
+      "subtema": "Apoio Comunitário",
+      "titulo": "Centro de Referência de Assistência Social (CRAS)",
+      "pergunta_modelo": "O que é o CRAS e quais atendimentos a comunidade pode buscar nele?",
+      "palavras_chave": [
+        "cras", "cesta básica", "auxílio vulnerabilidade", "assistência social do município",
+        "visita domiciliar", "família em risco", "benefício eventual", "apoio comunitário"
+      ],
+      "orientacao_resumida": "O CRAS é a unidade municipal da assistência social voltada à prevenção de vulnerabilidades. Nele a família faz e atualiza o CadÚnico, solicita benefícios eventuais municipais (como cesta de alimentos ou auxílio-funeral) e participa de grupos de convivência e oficinas comunitárias.",
+      "orientacao_detalhada": "Toda família tem direito a atendimento, independente de receber benefícios federais. As equipes compostas por assistentes sociais e psicólogos realizam acolhimento, visitas domiciliares e encaminhamento para a rede pública de saúde, educação e trabalho.",
+      "passos": [
+        "Encontre a unidade do CRAS que cobre o seu bairro no site da prefeitura ou pelo telefone de atendimento municipal (muitas cidades utilizam o 156).",
+        "Compareça com documentos pessoais de todos os membros da família e comprovante de endereço.",
+        "Explique a situação da família no acolhimento para direcionamento ao serviço adequado.",
+        "Participe dos acompanhamentos e oficinas oferecidos pela equipe."
+      ],
+      "aviso": "Os benefícios eventuais dependem da legislação e do orçamento de cada município; os critérios variam conforme a cidade.",
+      "referencia_consultada": "Ministério do Desenvolvimento e Assistência Social — gov.br/mds (Serviço de Proteção e Atendimento Integral à Família - PAIF).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["SRV-01", "SRV-02", "COM-04"]
+    },
+    {
+      "identificador": "COM-02",
+      "tema": "Orientações Comunitárias e Emergências",
+      "subtema": "Proteção Comunitária e Desastres",
+      "titulo": "Defesa Civil e Alertas de Enchentes e Chuvas Fortes",
+      "pergunta_modelo": "Como acionar a Defesa Civil e receber alertas gratuitos de tempestades e enchentes?",
+      "palavras_chave": [
+        "defesa civil", "enchente", "alagamento", "chuva forte", "alerta por sms 40199",
+        "199", "193", "deslizamento", "área de risco", "temporal", "vendaval"
+      ],
+      "orientacao_resumida": "Em situações de inundação, deslizamento ou estrutura em risco, acione a Defesa Civil pelo telefone 199 ou o Corpo de Bombeiros pelo 193. Para receber alertas meteorológicos oficiais gratuitos por SMS no celular, envie uma mensagem de texto com o seu CEP para o número 40199.",
+      "orientacao_detalhada": "Os alertas incluem comunicados sobre chuvas intensas, enchentes, vendavais e granizo emitidos pelo Centro Nacional de Monitoramento e Alertas de Desastres Naturais (Cemaden) junto com a Defesa Civil de cada estado. Em caso de orientação de evacuação, saia imediatamente da residência com documentos e medicamentos de uso contínuo.",
+      "passos": [
+        "Envie um SMS gratuito com os 8 dígitos do seu CEP para o número 40199.",
+        "Aguarde mensagem de confirmação do cadastramento do seu município.",
+        "Em emergência com risco à vida, ligue 193 (Bombeiros) ou 199 (Defesa Civil).",
+        "Não tente atravessar ruas alagadas nem se abrigue sob árvores durante temporais.",
+        "Mantenha um plano familiar simples com ponto de encontro e kit de documentos."
+      ],
+      "aviso": "O serviço de SMS 40199 é gratuito e não exige internet; cadastre os CEPs dos locais onde mora e trabalha.",
+      "referencia_consultada": "Secretaria Nacional de Proteção e Defesa Civil — gov.br/defesa-civil; Centro Nacional de Monitoramento e Alertas de Desastres Naturais (Cemaden).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["COM-01", "DIR-02", "COM-04"]
+    },
+    {
+      "identificador": "COM-03",
+      "tema": "Orientações Comunitárias e Emergências",
+      "subtema": "Saúde Comunitária",
+      "titulo": "Vacinação — Calendário Nacional e Onde Vacinar",
+      "pergunta_modelo": "Como saber quais vacinas devo tomar e onde me vacinar?",
+      "palavras_chave": [
+        "vacina", "vacinação", "calendário de vacinas", "onde tomar vacina", "posto de saúde vacina",
+        "vacina infantil", "gripe", "covid", "febre amarela", "sarampo", "hpv"
+      ],
+      "orientacao_resumida": "Todas as vacinas do Calendário Nacional são oferecidas gratuitamente nas salas de vacina das Unidades Básicas de Saúde (UBS). Apresente a caderneta de vacinação e um documento de identidade para que a equipe médica complete as doses pendentes de cada faixa etária.",
+      "orientacao_detalhada": "O Programa Nacional de Imunizações cobre imunizantes para crianças, adolescentes, adultos, gestantes e idosos. Doses aplicadas passam a ser registradas e podem ser consultadas no app Meu SUS Digital, inclusive com emissão do Certificado Nacional de Vacinação.",
+      "passos": [
+        "Reúna a caderneta de vacinação física e um documento com foto de cada membro da família.",
+        "Consulte as campanhas vigentes no portal do Ministério da Saúde ou na UBS do bairro.",
+        "Compareça à sala de vacina da UBS mais próxima para avaliação e aplicação.",
+        "Guarde a comprovação e confirme o registro no aplicativo Meu SUS Digital."
+      ],
+      "aviso": "Campanhas sazonais (como gripe) têm públicos prioritários divulgados no início de cada campanha; confirme o período junto à secretaria municipal de saúde.",
+      "referencia_consultada": "Programa Nacional de Imunizações (PNI) — Ministério da Saúde — gov.br/saude (Calendário Nacional de Vacinação).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DIR-02", "DIR-04", "COM-02"]
+    },
+    {
+      "identificador": "COM-04",
+      "tema": "Orientações Comunitárias e Emergências",
+      "subtema": "Direitos Humanos e Emergências Sociais",
+      "titulo": "Canais Oficiais de Denúncia e Apoio Cidadão (Disque 100 e Ligue 180)",
+      "pergunta_modelo": "Quais números posso ligar para denunciar violações de direitos humanos ou violência contra a mulher?",
+      "palavras_chave": [
+        "disque 100", "ligue 180", "180", "100", "denúncia anônima", "violação de direitos humanos",
+        "violência doméstica", "violência contra a mulher", "abuso de crianças", "direitos humanos"
+      ],
+      "orientacao_resumida": "O Disque 100 recebe denúncias gratuitas e sigilosas de violações de direitos humanos (crianças, pessoas idosas, PCDs, pessoas em situação de rua). O Ligue 180 é a Central de Atendimento à Mulher, com acolhimento, orientação e encaminhamento a serviços da rede. Ambos funcionam 24 horas por dia, todos os dias, gratuitamente de qualquer telefone.",
+      "orientacao_detalhada": "As denúncias geram protocolo formal e são encaminhadas a conselhos tutelares, delegacias especializadas, defensorias e órgãos do Ministério Público conforme a gravidade. Em perigo imediato com violência em andamento, a recomendação adicional é ligar 190 (Polícia Militar).",
+      "passos": [
+        "Ligue gratuitamente para o 100 (direitos humanos) ou 180 (violência contra a mulher) de qualquer telefone fixo ou celular.",
+        "Descreva os fatos com local, horário e informações identificáveis das partes, se souber.",
+        "Anotar o número de protocolo informado pelo atendente para acompanhamento posterior.",
+        "Em emergência com risco iminente à vida, acione simultaneamente o 190."
+      ],
+      "aviso": "Os canais asseguram anonimato a pedido do denunciante; nunca invente fatos para prejudicar terceiros, pois a denúncia caluniosa é crime.",
+      "referencia_consultada": "Ministério dos Direitos Humanos e da Cidadania — gov.br/mdh (Disque 100); Ministério das Mulheres — gov.br/mulheres (Ligue 180).",
+      "data_verificacao": "09/11/2026",
+      "topicos_relacionados": ["DIR-04", "DIR-03", "COM-01"]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "sistema": "Citizen Assist AI",
+    "versao_base": "1.0.0",
+    "data_execucao": "2026-11-09 14:18:36",
+    "total_registros_base": 18,
+    "total_temas": 4,
+    "total_termos_indexados": 501
+  },
+  "indicadores_gerais": {
+    "total_testes": 16,
+    "acertos": 16,
+    "erros": 0,
+    "taxa_acerto_pct": 100.0,
+    "tempo_medio_ms": 1.112,
+    "tempo_mediana_ms": 1.168,
+    "tempo_min_ms": 0.001,
+    "tempo_max_ms": 1.334
+  },
+  "indicadores_por_categoria": {
+    "direta": {
+      "total": 6,
+      "acertos": 6,
+      "taxa_acerto_pct": 100.0,
+      "tempo_medio_ms": 1.201
+    },
+    "reformulacao": {
+      "total": 4,
+      "acertos": 4,
+      "taxa_acerto_pct": 100.0,
+      "tempo_medio_ms": 1.167
+    },
+    "fora_escopo": {
+      "total": 3,
+      "acertos": 3,
+      "taxa_acerto_pct": 100.0,
+      "tempo_medio_ms": 1.188
+    },
+    "limitacao": {
+      "total": 3,
+      "acertos": 3,
+      "taxa_acerto_pct": 100.0,
+      "tempo_medio_ms": 0.782
+    }
+  },
+  "interpretacao": "A taxa de acerto global foi de 100.0% com tempo médio de consulta de 1.112 ms. O desempenho geral é satisfatório para um protótipo acadêmico, indicando que a estratégia de indexação invertida combinada com pesos por campo (palavras-chave, título, orientação) cobre bem perguntas diretas e as principais reformulações. As perguntas fora do escopo e os casos de limitação (entrada vazia, ambiguidade e termos fictícios) foram tratados sem falsas respostas positivas, cumprindo o requisito de declarar limitações de forma transparente. Categoria 'direta': 6/6 acertos (100.0%), tempo médio 1.201 ms. Categoria 'reformulacao': 4/4 acertos (100.0%), tempo médio 1.167 ms. Categoria 'fora_escopo': 3/3 acertos (100.0%), tempo médio 1.188 ms. Categoria 'limitacao': 3/3 acertos (100.0%), tempo médio 0.782 ms.",
+  "melhorias_possiveis": [
+    {
+      "item": "M1 — Expansão do algoritmo com TF-IDF e embeddings semânticos",
+      "descricao": "Hoje o ranqueamento usa heurística ponderada de tokens + Jaccard. A inclusão de TF-IDF com busca por n-gramas e, futuramente, embeddings de frases (mesmo locais/leves) melhorará reformulações com vocabulário distante das palavras-chave cadastradas."
+    },
+    {
+      "item": "M2 — Registro de perguntas não atendidas para curadoria contínua da base",
+      "descricao": "Adicionar módulo de auditoria (arquivo de log simples) que grave consultas sem correspondência ou ambíguas (sem coletar dados do usuário), permitindo à equipe priorizar novos temas a partir da demanda real dos cidadãos."
+    },
+    {
+      "item": "M3 — Suporte a sinônimos regionais e correção ortográfica (Levenshtein)",
+      "descricao": "Cidadãos de diferentes regiões usam expressões locais ('tirar identidade' vs 'fazer RG', nomes de órgãos estaduais como 'Poupatempo'/'Na Hora'/'Vapt Vupt'); um dicionário de sinônimos por UF e distância de edição tolerante a erros de digitação aumentará a robustez."
+    }
+  ],
+  "limitacoes_da_avaliacao": [
+    "A bateria atual tem 16 cenários planejados pela própria equipe — uma amostra pequena e com viés de construção; testes com perguntas reais de usuários externos são recomendados para confirmar os números.",
+    "O tempo de consulta foi medido localmente em memória com base estática (<20 registros); em bases maiores ou ambientes distribuídos o tempo tenderá a crescer e deve ser reavaliado.",
+    "A classificação de 'acerto' usa regras exatas (status + ID); consultas com duas respostas plausíveis podem ser penalizadas injustamente até que a política de aceitação de candidatos seja flexibilizada."
+  ],
+  "resultados_detalhados": [
+    {
+      "id": "T01",
+      "categoria": "direta",
+      "pergunta": "Como tirar a Nova Carteira de Identidade Nacional (CIN)?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "DOC-01"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "DOC-01",
+      "titulo_obtido": "Nova Carteira de Identidade Nacional (CIN)",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.334,
+      "explicacao": "Pergunta canônica com termos da CIN; deve recuperar DOC-01.",
+      "modelo_a": "ok (1867 chars)",
+      "modelo_b": "ok (2430 chars)"
+    },
+    {
+      "id": "T02",
+      "categoria": "direta",
+      "pergunta": "Meu CPF está com problemas, como regularizar na Receita Federal?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "DOC-02"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "DOC-02",
+      "titulo_obtido": "CPF — Inscrição, Regularização e Comprovante",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.231,
+      "explicacao": "Combinação 'CPF + regularizar + Receita Federal'; deve apontar para DOC-02.",
+      "modelo_a": "ok (1748 chars)",
+      "modelo_b": "ok (2255 chars)"
+    },
+    {
+      "id": "T03",
+      "categoria": "direta",
+      "pergunta": "Como solicitar o seguro-desemprego e qual é o prazo?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "SRV-04"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "SRV-04",
+      "titulo_obtido": "Seguro-Desemprego",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.147,
+      "explicacao": "Consulta direta sobre seguro-desemprego; deve retornar SRV-04.",
+      "modelo_a": "ok (1799 chars)",
+      "modelo_b": "ok (2372 chars)"
+    },
+    {
+      "id": "T04",
+      "categoria": "direta",
+      "pergunta": "Não tenho dinheiro para pagar advogado, como conseguir a Defensoria Pública?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "DIR-03"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "DIR-03",
+      "titulo_obtido": "Assistência Jurídica Gratuita pela Defensoria Pública",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.155,
+      "explicacao": "Menção explícita à Defensoria Pública e assistência jurídica; deve retornar DIR-03.",
+      "modelo_a": "ok (2001 chars)",
+      "modelo_b": "ok (2521 chars)"
+    },
+    {
+      "id": "T05",
+      "categoria": "direta",
+      "pergunta": "Como cadastrar para receber alertas de chuva forte da Defesa Civil por SMS 40199?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "COM-02"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "COM-02",
+      "titulo_obtido": "Defesa Civil e Alertas de Enchentes e Chuvas Fortes",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.171,
+      "explicacao": "Menção a 'Defesa Civil', 'chuva forte' e '40199'; deve apontar para COM-02.",
+      "modelo_a": "ok (1948 chars)",
+      "modelo_b": "ok (2531 chars)"
+    },
+    {
+      "id": "T06",
+      "categoria": "direta",
+      "pergunta": "Quais telefones posso ligar para denunciar violência contra a mulher ou violação de direitos humanos?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "COM-04"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "COM-04",
+      "titulo_obtido": "Canais Oficiais de Denúncia e Apoio Cidadão (Disque 100 e Ligue 180)",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.168,
+      "explicacao": "Menção a Disque 100 / Ligue 180 e direitos humanos; deve apontar para COM-04.",
+      "modelo_a": "ok (2016 chars)",
+      "modelo_b": "ok (2535 chars)"
+    },
+    {
+      "id": "T07",
+      "categoria": "reformulacao",
+      "pergunta": "Quero saber como faço um RG novo no meu estado",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "DOC-01"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "DOC-01",
+      "titulo_obtido": "Nova Carteira de Identidade Nacional (CIN)",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.148,
+      "explicacao": "Reformulação coloquial usando 'RG novo'; deve mapear para DOC-01 (CIN).",
+      "modelo_a": "ok (1867 chars)",
+      "modelo_b": "ok (2430 chars)"
+    },
+    {
+      "id": "T08",
+      "categoria": "reformulacao",
+      "pergunta": "Perdi minha certidão de casamento e nascimento, onde tiro outra via?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "DOC-05"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "DOC-05",
+      "titulo_obtido": "Certidões de Nascimento, Casamento e Óbito — 2ª Via",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.17,
+      "explicacao": "Reformulação com 'certidão de casamento', 'nascimento' e 'segunda via'; deve mapear para DOC-05.",
+      "modelo_a": "ok (1838 chars)",
+      "modelo_b": "ok (2372 chars)"
+    },
+    {
+      "id": "T09",
+      "categoria": "reformulacao",
+      "pergunta": "Como funciona o desconto da conta de luz para famílias de baixa renda?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "SRV-05"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "SRV-05",
+      "titulo_obtido": "Tarifa Social de Energia Elétrica",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.189,
+      "explicacao": "Reformulação coloquial para Tarifa Social de Energia; deve mapear para SRV-05.",
+      "modelo_a": "ok (1857 chars)",
+      "modelo_b": "ok (2465 chars)"
+    },
+    {
+      "id": "T10",
+      "categoria": "reformulacao",
+      "pergunta": "Comprei um celular com defeito e a loja não quer trocar, quais são meus direitos?",
+      "esperado": {
+        "status": "SUCESSO",
+        "id_orientacao": "DIR-01"
+      },
+      "status_obtido": "SUCESSO",
+      "id_obtido": "DIR-01",
+      "titulo_obtido": "Direitos do Consumidor e Reclamação no Procon",
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.162,
+      "explicacao": "Cenário de consumo em linguagem natural; deve acionar DIR-01 (Procon).",
+      "modelo_a": "ok (1982 chars)",
+      "modelo_b": "ok (2607 chars)"
+    },
+    {
+      "id": "T11",
+      "categoria": "fora_escopo",
+      "pergunta": "Como tirar o visto de turista para os Estados Unidos?",
+      "esperado": {
+        "status": "SEM_CORRESPONDENCIA",
+        "id_orientacao": null
+      },
+      "status_obtido": "SEM_CORRESPONDENCIA",
+      "id_obtido": null,
+      "titulo_obtido": null,
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.161,
+      "explicacao": "Tema internacional fora do escopo cidadão brasileiro; o assistente deve declarar limite sem inventar.",
+      "modelo_a": "",
+      "modelo_b": ""
+    },
+    {
+      "id": "T12",
+      "categoria": "fora_escopo",
+      "pergunta": "Qual é a melhor corretora para investir em ações na bolsa?",
+      "esperado": {
+        "status": "SEM_CORRESPONDENCIA",
+        "id_orientacao": null
+      },
+      "status_obtido": "SEM_CORRESPONDENCIA",
+      "id_obtido": null,
+      "titulo_obtido": null,
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.166,
+      "explicacao": "Tema financeiro privado fora do escopo; deve acionar aviso de limitação.",
+      "modelo_a": "",
+      "modelo_b": ""
+    },
+    {
+      "id": "T13",
+      "categoria": "fora_escopo",
+      "pergunta": "Receita de bolo de chocolate fofinho com cobertura",
+      "esperado": {
+        "status": "SEM_CORRESPONDENCIA",
+        "id_orientacao": null
+      },
+      "status_obtido": "SEM_CORRESPONDENCIA",
+      "id_obtido": null,
+      "titulo_obtido": null,
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.238,
+      "explicacao": "Consulta totalmente desconectada do serviço público; deve ser rejeitada educadamente.",
+      "modelo_a": "",
+      "modelo_b": ""
+    },
+    {
+      "id": "T14",
+      "categoria": "limitacao",
+      "pergunta": "[entrada vazia]",
+      "esperado": {
+        "status": "ENTRADA_VAZIA",
+        "id_orientacao": null
+      },
+      "status_obtido": "ENTRADA_VAZIA",
+      "id_obtido": null,
+      "titulo_obtido": null,
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 0.001,
+      "explicacao": "Entrada vazia; o sistema deve validar e orientar como formular a pergunta.",
+      "modelo_a": "",
+      "modelo_b": ""
+    },
+    {
+      "id": "T15",
+      "categoria": "limitacao",
+      "pergunta": "social",
+      "esperado": {
+        "status": "AMBIGUO",
+        "id_orientacao": null
+      },
+      "status_obtido": "AMBIGUO",
+      "id_obtido": null,
+      "titulo_obtido": null,
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.169,
+      "explicacao": "Termo hiper-genérico ('social') com correspondência em múltiplos registros temáticos; deve listar candidatos para desambiguação.",
+      "modelo_a": "",
+      "modelo_b": ""
+    },
+    {
+      "id": "T16",
+      "categoria": "limitacao",
+      "pergunta": "serviço fictício de teletransporte municipal xpto",
+      "esperado": {
+        "status": "SEM_CORRESPONDENCIA",
+        "id_orientacao": null
+      },
+      "status_obtido": "SEM_CORRESPONDENCIA",
+      "id_obtido": null,
+      "titulo_obtido": null,
+      "acerto": true,
+      "classificacao": "ACERTO",
+      "tempo_consulta_ms": 1.177,
+      "explicacao": "Pergunta deliberadamente fantasiosa; deve acionar aviso de ausência de informação confiável.",
+      "modelo_a": "",
+      "modelo_b": ""
+    }
+  ]
+}

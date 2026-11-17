@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Citizen Assist AI — Assistente de Orientação Cidadã</title>
+  <meta name="description" content="Assistente digital que facilita o acesso a informações verificadas sobre documentos, serviços públicos, direitos e cidadania no Brasil." />
+  <link rel="icon" type="image/png" href="assets/logo_citizen_assist.png" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-text-size="md">
+
+  <!-- ==================== FAIXA DE EMERGÊNCIA ==================== -->
+  <aside class="emergency-ribbon" aria-label="Telefones públicos de emergência">
+    <div class="container ribbon-inner">
+      <span class="ribbon-label"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Em perigo? Ligue grátis:</span>
+      <div class="ribbon-phones">
+        <a href="tel:190" aria-label="190 Polícia Militar"><strong>190</strong>&nbsp;Polícia</a>
+        <a href="tel:192" aria-label="192 SAMU"><strong>192</strong>&nbsp;SAMU</a>
+        <a href="tel:193" aria-label="193 Bombeiros"><strong>193</strong>&nbsp;Bombeiros</a>
+        <a href="tel:199" aria-label="199 Defesa Civil"><strong>199</strong>&nbsp;Defesa Civil</a>
+        <a href="tel:135" aria-label="135 Central INSS"><strong>135</strong>&nbsp;INSS</a>
+        <a href="tel:100" aria-label="100 Disque Direitos Humanos"><strong>100</strong>&nbsp;Direitos Humanos</a>
+        <a href="tel:180" aria-label="180 Central de Atendimento à Mulher"><strong>180</strong>&nbsp;Mulher</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-logo" role="img" aria-label="Símbolo do Citizen Assist AI">
+          <img src="assets/logo_citizen_assist.png" alt="" width="512" height="512" />
+        </div>
+        <div>
+          <h1 class="brand-title">Citizen Assist AI</h1>
+          <p class="brand-sub">Informação cidadã simples, verificada e feita para você</p>
+        </div>
+      </div>
+
+      <!-- Barra de acessibilidade -->
+      <div class="a11y-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <span class="a11y-label">Acessibilidade:</span>
+        <button id="btnFontSmaller" class="btn-a11y" type="button" title="Diminuir tamanho da letra" aria-label="Diminuir letra">A-</button>
+        <button id="btnFontNormal" class="btn-a11y active" type="button" title="Tamanho normal da letra" aria-label="Letra normal">A</button>
+        <button id="btnFontBigger" class="btn-a11y" type="button" title="Aumentar tamanho da letra" aria-label="Aumentar letra">A+</button>
+        <button id="btnHighContrast" class="btn-a11y btn-chip" type="button" aria-pressed="false" title="Alternar modo de alto contraste reforçado">
+          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Alto contraste
+        </button>
+        <button id="btnSpeechToggle" class="btn-a11y btn-chip" type="button" aria-pressed="true" title="Leitura automática das respostas em voz alta">
+          <i class="fa-solid fa-volume-high" aria-hidden="true"></i> Voz <span id="speechStateLabel">ligada</span>
+        </button>
+        <button id="btnHelp" class="btn-a11y btn-chip" type="button" aria-haspopup="dialog" aria-expanded="false" title="Ajuda de como usar o assistente">
+          <i class="fa-solid fa-circle-question" aria-hidden="true"></i> Como usar
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== BANNER ÉTICO ==================== -->
+  <section class="ethics-banner" role="region" aria-label="Aviso ético e de privacidade">
+    <div class="container ethics-inner">
+      <div class="ethics-badge" aria-hidden="true">Aviso importante</div>
+      <p>
+        Este é um <strong>assistente informativo</strong>. Não somos canal oficial do governo,
+        <strong>não coletamos nenhum dado pessoal</strong> (sem pedir nome, CPF ou telefone) e todas as respostas
+        citam a fonte oficial com a data em que foi conferida. Confirme sempre prazos e taxas junto ao órgão responsável.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== HERO / BUSCA ==================== -->
+  <section class="hero-section" aria-label="Campo de pergunta do cidadão">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-main">
+          <div class="hero-eyebrow"><i class="fa-solid fa-sparkles" aria-hidden="true"></i> Orientação sem complicação</div>
+      <div class="hero-copy">
+        <h2 class="hero-title">O que você precisa saber hoje?</h2>
+        <p class="hero-lead">
+          Escreva sua dúvida com suas próprias palavras. Você recebe uma explicação simples, os próximos passos e o canal oficial para confirmar.
+        </p>
+      </div>
+
+      <!-- Caixa de busca -->
+      <form id="searchForm" class="search-box" role="search" novalidate>
+        <label for="queryInput" class="visually-hidden">Digite sua dúvida sobre documentos, serviços ou direitos</label>
+        <div class="search-input-wrap">
+          <input
+            id="queryInput"
+            class="search-input"
+            type="text"
+            autocomplete="off"
+            spellcheck="true"
+            placeholder="Ex.: Como regularizar meu CPF?"
+            aria-autocomplete="list"
+            aria-controls="suggestionsList"
+          />
+          <button id="btnClear" class="btn-clear hidden" type="button" aria-label="Limpar texto"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+          <button id="btnMic" class="btn-mic" type="button" title="Falar sua pergunta pelo microfone (se suportado)" aria-label="Perguntar por voz"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Falar</button>
+          <button class="btn-primary btn-search" type="submit"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><strong>Perguntar</strong></button>
+        </div>
+        <ul id="suggestionsList" class="suggestions-list hidden" role="listbox" aria-label="Sugestões de busca"></ul>
+      </form>
+
+      <!-- Perguntas rápidas (chips) -->
+      <div class="quick-questions" aria-label="Perguntas rápidas">
+        <span class="quick-label">Ou comece por uma destas dúvidas:</span>
+        <div class="chips-row">
+          <button class="chip" type="button">Nova Carteira de Identidade (CIN)</button>
+          <button class="chip" type="button">Regularizar o CPF</button>
+          <button class="chip" type="button">Bolsa Família — regras</button>
+          <button class="chip" type="button">Seguro-Desemprego — prazo</button>
+          <button class="chip" type="button">Desconto na conta de luz</button>
+          <button class="chip" type="button">Atendimento no SUS</button>
+          <button class="chip" type="button">Defensoria Pública gratuita</button>
+          <button class="chip" type="button">Alerta de chuva por SMS 40199</button>
+          <button class="chip" type="button">Disque 100 / Ligue 180</button>
+        </div>
+      </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Como funciona o assistente">
+          <div class="hero-aside-top"><span class="hero-aside-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span><span>É fácil começar</span></div>
+          <h3>Resolva em poucos passos</h3>
+          <ol class="hero-steps">
+            <li><span>01</span><div><strong>Conte o que aconteceu</strong><small>Não precisa usar palavras exatas.</small></div></li>
+            <li><span>02</span><div><strong>Veja a orientação</strong><small>Leia o resumo e o passo a passo.</small></div></li>
+            <li><span>03</span><div><strong>Confirme no canal oficial</strong><small>Use a fonte e os contatos indicados.</small></div></li>
+          </ol>
+          <div class="hero-trust"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i><span>Sem cadastro. Sem coleta de dados pessoais.</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NAVEGAÇÃO POR ABAS ==================== -->
+  <nav class="tabs-nav" aria-label="Seções do sistema">
+    <div class="container tabs-inner" role="tablist">
+      <button class="tab-btn active" role="tab" id="tab-answer" aria-selected="true" aria-controls="panel-answer">
+        <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-message"></i></span> Respostas
+      </button>
+      <button class="tab-btn" role="tab" id="tab-themes" aria-selected="false" aria-controls="panel-themes">
+        <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span> Temas e Assuntos
+      </button>
+      <button class="tab-btn" role="tab" id="tab-graph" aria-selected="false" aria-controls="panel-graph">
+        <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-compass"></i></span> Mapa de Relações
+      </button>
+      <button class="tab-btn" role="tab" id="tab-tests" aria-selected="false" aria-controls="panel-tests">
+        <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-chart-simple"></i></span> Testes e Indicadores
+      </button>
+      <button class="tab-btn" role="tab" id="tab-about" aria-selected="false" aria-controls="panel-about">
+        <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span> Sobre o assistente
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main class="main-content" id="main" role="main">
+    <div class="container">
+
+      <!-- ===== PAINEL 1: RESPOSTAS ===== -->
+      <section id="panel-answer" class="tab-panel active" role="tabpanel" aria-labelledby="tab-answer">
+        <!-- Barra de controle de modelo (A vs B) -->
+        <div class="model-control-card" role="region" aria-label="Escolha do estilo de resposta">
+          <div class="model-control-head">
+            <div>
+              <h3 class="model-control-title">Estilo das respostas</h3>
+              <p class="model-control-sub">Você pode alternar a qualquer momento — o conteúdo é o mesmo, só muda o jeito de explicar.</p>
+            </div>
+            <div class="model-segmented" role="radiogroup" aria-label="Modelo de resposta">
+              <label class="seg-btn">
+                <input type="radio" name="responseModel" value="A" />
+                <span><strong>Modelo A</strong> — Direto e conciso</span>
+              </label>
+              <label class="seg-btn">
+                <input type="radio" name="responseModel" value="B" checked />
+                <span><strong>Modelo B</strong> — Didático e acolhedor (recomendado)</span>
+              </label>
+            </div>
+          </div>
+          <p id="modelExplain" class="model-explain"></p>
+        </div>
+
+        <!-- Área de resultados -->
+        <div id="resultsFeed" class="results-feed" aria-live="polite" aria-atomic="false"></div>
+
+        <!-- Histórico/ações da conversa -->
+        <div class="feed-actions">
+          <button id="btnClearFeed" class="btn-ghost" type="button" aria-label="Limpar histórico de respostas na tela">Limpar respostas desta tela</button>
+        </div>
+      </section>
+
+      <!-- ===== PAINEL 2: TEMAS ===== -->
+      <section id="panel-themes" class="tab-panel" role="tabpanel" aria-labelledby="tab-themes" hidden>
+        <div class="panel-head">
+          <h2>Temas disponíveis na base de conhecimento</h2>
+          <p class="panel-sub">Escolha um tema para ver seus subtemas e todas as orientações verificadas pela equipe.</p>
+        </div>
+        <div id="themesList" class="themes-grid" aria-label="Lista de temas"></div>
+      </section>
+
+      <!-- ===== PAINEL 3: GRAFO/MAPA ===== -->
+      <section id="panel-graph" class="tab-panel" role="tabpanel" aria-labelledby="tab-graph" hidden>
+        <div class="panel-head">
+          <h2>Mapa de relações entre assuntos</h2>
+          <p class="panel-sub">
+            O assistente conecta <strong>18 orientações em 4 temas por 54 relações de continuidade</strong>.
+            Depois de ler uma orientação, você é guiado aos próximos passos lógicos (ex.: identidade → CPF → certidão).
+          </p>
+        </div>
+        <div class="graph-filters">
+          <label for="graphThemeFilter" class="filter-label">Filtrar por tema:</label>
+          <select id="graphThemeFilter" class="select-field" aria-label="Filtro de tema do grafo"></select>
+          <span id="graphStats" class="graph-stats"></span>
+        </div>
+        <div id="graphContainer" class="graph-container" aria-label="Grafo interativo de tópicos"></div>
+      </section>
+
+      <!-- ===== PAINEL 4: TESTES & INDICADORES ===== -->
+      <section id="panel-tests" class="tab-panel" role="tabpanel" aria-labelledby="tab-tests" hidden>
+        <div class="panel-head">
+          <h2>Indicadores de desempenho do assistente</h2>
+          <p class="panel-sub">
+            Resultados reais medidos pela bateria automatizada de 16 cenários e pelo teste de usabilidade com usuário real.
+          </p>
+        </div>
+
+        <!-- KPIs -->
+        <div class="kpi-grid" aria-label="Indicadores principais">
+          <div class="kpi-card">
+            <span class="kpi-value" id="kpiAccuracy">100%</span>
+            <span class="kpi-label">Taxa de acerto das respostas (16/16)</span>
+            <span class="kpi-note">Meta do edital: >=80%</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-value" id="kpiLatency">1,2 ms</span>
+            <span class="kpi-label">Tempo médio de consulta</span>
+            <span class="kpi-note">Medição em tempo real</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-value">87,5</span>
+            <span class="kpi-label">Escore SUS de usabilidade (grau A — Excelente)</span>
+            <span class="kpi-note">Média global de referência: 68</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-value">18 / 4 / 54</span>
+            <span class="kpi-label">Orientações · Temas · Relações</span>
+            <span class="kpi-note">Fontes checadas em 09/11/2026</span>
+          </div>
+        </div>
+
+        <!-- Ação para rodar testes ao vivo -->
+        <div class="test-runner-card">
+          <div class="runner-head">
+            <div>
+              <h3>Executar a bateria de testes agora</h3>
+              <p>Roda os 16 cenários oficiais diretamente no navegador e recalcula os indicadores ao vivo.</p>
+            </div>
+            <button id="btnRunTests" class="btn-primary" type="button"><i class="fa-solid fa-play" aria-hidden="true"></i><strong>Executar testes</strong></button>
+          </div>
+          <div id="testProgress" class="test-progress hidden" role="progressbar" aria-valuemin="0" aria-valuemax="16" aria-valuenow="0">
+            <div class="progress-bar"><div id="progressBarFill" class="progress-fill"></div></div>
+            <p id="progressLabel" class="progress-label"></p>
+          </div>
+          <div id="testResultsBox" class="test-results-box hidden"></div>
+        </div>
+
+        <!-- Tabela das categorias -->
+        <div class="category-table-card">
+          <h3>Indicadores por categoria de consulta</h3>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Acertos</th>
+                  <th scope="col">Taxa</th>
+                  <th scope="col">Tempo médio</th>
+                </tr>
+              </thead>
+              <tbody id="categoryTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Usabilidade SUS -->
+        <div class="usability-card">
+          <h3>Teste de facilidade de uso com usuário real</h3>
+          <p>
+            Um usuário no perfil do público-alvo executou 5 tarefas padronizadas (sucesso 5/5, tempo médio de 26 segundos por tarefa)
+            e respondeu ao questionário <strong>SUS (System Usability Scale)</strong> de 10 perguntas, atingindo <strong>87,5 pontos</strong>,
+            classificação "Excelente".
+          </p>
+          <div class="sus-bars" id="susBars"></div>
+        </div>
+      </section>
+
+      <!-- ===== PAINEL 5: SOBRE ===== -->
+      <section id="panel-about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about" hidden>
+        <article class="about-card">
+          <h2>Sobre o assistente</h2>
+          <p>
+            O Citizen Assist AI organiza orientações verificadas de serviços públicos brasileiros e explica cada assunto
+            em linguagem simples, com passo a passo, avisos de confirmação e fonte oficial.
+          </p>
+
+          <h3>Compromissos de segurança e privacidade</h3>
+          <ul class="about-list">
+            <li><strong>Sem coleta de dados pessoais:</strong> você não precisa informar nome, CPF, telefone ou endereço;</li>
+            <li><strong>Informação, não decisão:</strong> o assistente não emite protocolos ou decisões e não substitui o órgão responsável;</li>
+            <li><strong>Fontes com data:</strong> toda resposta mostra o órgão consultado, o link oficial e a data de verificação;</li>
+            <li><strong>Limites claros:</strong> quando não encontra uma orientação confiável, o assistente informa isso sem inventar respostas;</li>
+            <li><strong>Uso simples:</strong> você pode digitar, falar a pergunta, aumentar a letra, ativar alto contraste e ouvir a resposta.</li>
+          </ul>
+
+          <h3>Como as respostas são organizadas</h3>
+          <p>
+            A busca reconhece palavras parecidas, apresenta os temas mais próximos e evita escolher uma resposta quando a pergunta
+            pode ter mais de um significado. As orientações também indicam assuntos relacionados para você continuar a consulta.
+          </p>
+
+          <h3>Temas disponíveis</h3>
+          <div class="team-grid">
+            <div class="team-card"><h4><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Documentos</h4><p>Identidade, CPF, título de eleitor, carteira de trabalho e certidões.</p></div>
+            <div class="team-card"><h4><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Benefícios</h4><p>CadÚnico, Bolsa Família, INSS, seguro-desemprego e tarifa social.</p></div>
+            <div class="team-card"><h4><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Direitos e comunidade</h4><p>Consumidor, SUS, Defensoria, CRAS, Defesa Civil e canais de denúncia.</p></div>
+          </div>
+        </article>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <p><strong>Citizen Assist AI</strong> — Assistente Digital de Orientação Cidadã</p>
+        <p class="footer-small">Informação orientativa · Não substitui canais oficiais de atendimento · Verificação das fontes: novembro/2026</p>
+      </div>
+      <div class="footer-links">
+        <button id="btnFooterHelp" class="footer-link-btn" type="button">Ajuda</button>
+        <button id="btnFooterPrint" class="footer-link-btn" type="button" onclick="window.print()">Imprimir respostas</button>
+        <a class="footer-link-btn" href="#main">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DE AJUDA ==================== -->
+  <div id="helpModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="helpTitle" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="helpTitle">Como usar o assistente</h3>
+        <button id="btnCloseHelp" class="modal-close" type="button" aria-label="Fechar janela de ajuda"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+        <ol class="help-steps">
+          <li><strong>Escreva sua pergunta</strong> na caixa no topo da página — com suas próprias palavras — e toque em <strong>Perguntar</strong>.</li>
+          <li>Você também pode <strong>tocar em uma das perguntas prontas</strong> abaixo da caixa.</li>
+          <li>Cada resposta mostra: o que você precisa saber, o <strong>passo a passo</strong>, a <strong>fonte oficial</strong> com data e os <strong>avisos</strong> importantes.</li>
+          <li>No fim da resposta aparecem <strong>assuntos parecidos</strong> para você continuar lendo sem digitar de novo.</li>
+          <li>A qualquer momento você pode <strong>aumentar a letra (A+)</strong>, ligar o <strong>alto contraste</strong> ou ouvir a resposta (<strong>🔊 Voz</strong>).</li>
+          <li>Na aba <strong>Testes e Indicadores</strong> você pode ver — e rodar — a comprovação do funcionamento do sistema.</li>
+        </ol>
+      </div>
+      <div class="modal-foot">
+        <button id="btnHelpGotIt" class="btn-primary" type="button">Entendi, vamos começar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL DE AMBIGUIDADE ==================== -->
+  <div id="ambiguityModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="ambiguityTitle" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="ambiguityTitle">Sua pergunta pode se referir a mais de um assunto</h3>
+        <button id="btnCloseAmbiguity" class="modal-close" type="button" aria-label="Fechar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-sm">Escolha a opção que mais tem a ver com o que você procura:</p>
+        <div id="ambiguityOptions" class="ambiguity-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST DE STATUS ==================== -->
+  <div id="toast" class="toast hidden" role="status" aria-live="assertive"></div>
+
+  <!-- Dados da base embutidos como fallback seguro para abertura como arquivo local (file://) -->
+  <script src="js/app.js"></script>
+</body>
+</html>
