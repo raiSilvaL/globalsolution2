@@ -10,11 +10,9 @@
 
 ## 1. Equipe e RMs
 
-> **Instrução de entrega:** substitua os campos entre colchetes pelos dados reais dos integrantes do grupo antes de publicar o repositório e enviar o link no FIAP ON.
-
 | Nome do Integrante | RM |
 |---|:---:|
-| Rai da Silva Lima | [RM572070] |
+| Rai da Silva Lima | RM572070 |
 
 
 ---
