@@ -250,7 +250,14 @@ digite 'menu' para retornar ao menu principal.
 
 ---
 
-## 9. Conclusões, Limitações e Possibilidades de Melhoria
+## 9. Link do Vídeo no YouTube
+
+**Vídeo de apresentação do projeto (YouTube, Não Listado):**
+ **Link do video**
+
+---
+
+## 10. Conclusões, Limitações e Possibilidades de Melhoria
 
 **Conclusões:** O Citizen Assist AI demonstra que é viável construir um assistente cidadão útil, transparente e auditável utilizando **fundamentos de programação** (listas, dicionários, normalização textual, índice invertido, scoring ponderado e representação em grafo) integrados a **estratégias de instrução/resposta estruturadas com fontes verificadas**. A solução atingiu 100% de precisão nos cenários avaliados e 87,5/100 na escala SUS, confirmando que a simplicidade arquitetural não compromete — e em muitos casos favorece — a clareza para o cidadão.
 
@@ -268,7 +275,7 @@ digite 'menu' para retornar ao menu principal.
 
 ---
 
-## 10. Interface Web Acessível (HTML, CSS e JavaScript)
+## 11. Interface Web Acessível (HTML, CSS e JavaScript)
 
 Pensando no público com **idade avançada** — que representa parcela significativa dos usuários de serviços públicos e frequentemente enfrenta dificuldades com telas complexas —, desenvolveu-se uma interface web complementar em `web/`, seguindo técnicas modernas de UX/UI e a paleta solicitada:
 
