@@ -253,7 +253,7 @@ digite 'menu' para retornar ao menu principal.
 ## 9. Link do Vídeo no YouTube
 
 **Vídeo de apresentação do projeto (YouTube, Não Listado):**
- **Link do video**
+ **[Link do video](https://youtu.be/BGwlKRGdudU)**
 
 ---
 
@@ -339,17 +339,17 @@ citizen-assist-ai/
 
 ## Checklist de Entrega
 
-- [ ] Repositório GitHub público e acessível?
-- [ ] Arquivo `entrega_links.txt` enviado no FIAP ON contendo apenas os 2 links?
-- [ ] Vídeo disponível no YouTube como "Não Listado"?
-- [ ] Código Python funciona sem erros nas operações demonstradas? (`python src/sistema.py` e `python src/sistema.py --test`)
-- [ ] Interface web abre corretamente? (`python src/servidor_web.py` → `http://localhost:8000/web/`)
-- [ ] Perguntas, respostas com fontes e tratamento de consultas não previstas documentados?
-- [ ] Estratégia de busca e organização dos temas justificadas?
-- [ ] Indicadores de acerto, tempo e facilidade de uso calculados e interpretados?
-- [ ] Entradas inválidas e ausência de informações confiáveis tratadas corretamente?
-- [ ] Fluxo de consulta e avisos de limitação apresentados com clareza?
-- [ ] Uso de IA documentado em `docs/uso_ia.md`?
+- [X] Repositório GitHub público e acessível?
+- [X] Arquivo `entrega_links.txt` enviado no FIAP ON contendo apenas os 2 links?
+- [X] Vídeo disponível no YouTube como "Não Listado"?
+- [X] Código Python funciona sem erros nas operações demonstradas? (`python src/sistema.py` e `python src/sistema.py --test`)
+- [X] Interface web abre corretamente? (`python src/servidor_web.py` → `http://localhost:8000/web/`)
+- [X] Perguntas, respostas com fontes e tratamento de consultas não previstas documentados?
+- [X] Estratégia de busca e organização dos temas justificadas?
+- [X] Indicadores de acerto, tempo e facilidade de uso calculados e interpretados?
+- [X] Entradas inválidas e ausência de informações confiáveis tratadas corretamente?
+- [X] Fluxo de consulta e avisos de limitação apresentados com clareza?
+- [X] Uso de IA documentado em `docs/uso_ia.md`?
 
 
 ---
